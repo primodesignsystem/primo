@@ -3,7 +3,7 @@
 </h1>
 <p align="center">
   <a href="https://github.com/primo-design-system/primo/blob/main/LICENSE">
-    <img src="https://img.shields.io/badge/license-Apache--2.0-blue.svg" alt="primo is released under the MIT license" />
+    <img src="https://img.shields.io/badge/license-MIT-green" alt="primo is released under the MIT license" />
   </a>
   <a href="https://circleci.com/gh/primo-design-system/primo">
     <img src="https://circleci.com/gh/primo-design-system/primo.svg?style=shield" alt="Build Status" />

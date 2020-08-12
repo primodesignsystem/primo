@@ -5,19 +5,24 @@
   "author": "Richard McCartney <richard@mccartney.io>",
   "homepage": "https://github.com/primodesignsystem/primo#readme",
   "license": "MIT",
-  "main": "lib/icons-react.js",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
+  "main": "lib/index.js",
+  "module": "es/index.js",
   "files": [
-    "lib"
+    "es",
+    "lib",
+    "scss",
+    "src"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/primodesignsystem/primo.git"
   },
   "scripts": {
+    "build": "echo \"Build: run tests from root\" && exit 1",
+    "clean": "echo \"Clean: run tests from root\" && exit 1",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {

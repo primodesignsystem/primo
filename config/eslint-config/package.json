@@ -5,13 +5,12 @@
   "author": "Richard McCartney <richard@mccartney.io>",
   "homepage": "https://github.com/primodesignsystem/primo#readme",
   "license": "MIT",
-  "main": "lib/eslint-config.js",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
+  "main": "index.js",
   "files": [
-    "lib"
+    "plugins",
+    "index.js",
+    "react.js",
+    "typescript.js"
   ],
   "repository": {
     "type": "git",
@@ -22,5 +21,23 @@
   },
   "bugs": {
     "url": "https://github.com/primodesignsystem/primo/issues"
+  },
+  "peerDependencies": {
+    "eslint": "^6.0.0",
+    "prettier": "^2.0.5"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.25.0",
+    "@typescript-eslint/parser": "^2.25.0",
+    "babel-eslint": "^10.1.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.0",
+    "eslint-plugin-react-hooks": "^4.0.4",
+    "eslint-restricted-globals": "^0.2.0"
   }
 }

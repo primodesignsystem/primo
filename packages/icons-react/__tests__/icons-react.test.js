@@ -3,5 +3,5 @@
 const iconsReact = require('..');
 
 describe('icons-react', () => {
-    it('needs tests');
+  it('needs tests');
 });

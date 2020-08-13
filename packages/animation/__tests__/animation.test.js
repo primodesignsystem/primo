@@ -3,5 +3,5 @@
 const animation = require('..');
 
 describe('animation', () => {
-    it('needs tests');
+  it('needs tests');
 });

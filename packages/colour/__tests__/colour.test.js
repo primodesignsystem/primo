@@ -3,5 +3,5 @@
 const colour = require('..');
 
 describe('colour', () => {
-    it('needs tests');
+  it('needs tests');
 });

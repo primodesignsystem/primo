@@ -3,5 +3,5 @@
 module.exports = stylelintConfig;
 
 function stylelintConfig() {
-    // TODO
+  // TODO
 }

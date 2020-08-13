@@ -7,9 +7,14 @@
   "author": "Richard McCartney <richard@mccartney.io>",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "format.js": "prettier --write \"**/*.{js,ts,tsx}\"",
+    "lint.js": "eslint . --ext ts --ext tsx --ext js"
+  },
   "devDependencies": {
     "@babel/core": "^7.10.5",
     "@commitlint/cli": "^9.1.1",
+    "@primo/prettier-config": "0.0.0",
     "@commitlint/config-conventional": "^9.1.1",
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/commit-analyzer": "^8.0.1",
@@ -22,6 +27,7 @@
     "cz-conventional-changelog": "^3.2.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
+    "eslint": "^6.8.0",
     "husky": "^4.2.5",
     "jest": "^26.1.0",
     "lerna": "^3.22.1",
@@ -57,5 +63,10 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "eslintConfig": {
+    "extends": [
+      "@primo/eslint-config"
+    ]
   }
 }

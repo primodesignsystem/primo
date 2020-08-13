@@ -3,5 +3,5 @@
 const react = require('..');
 
 describe('react', () => {
-    it('needs tests');
+  it('needs tests');
 });

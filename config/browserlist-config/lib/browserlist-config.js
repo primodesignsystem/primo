@@ -3,5 +3,5 @@
 module.exports = browserlistConfig;
 
 function browserlistConfig() {
-    // TODO
+  // TODO
 }

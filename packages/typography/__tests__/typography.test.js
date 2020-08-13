@@ -3,5 +3,5 @@
 const typography = require('..');
 
 describe('typography', () => {
-    it('needs tests');
+  it('needs tests');
 });

@@ -3,5 +3,5 @@
 const browserlistConfig = require('..');
 
 describe('browserlist-config', () => {
-    it('needs tests');
+  it('needs tests');
 });

@@ -3,12 +3,12 @@ version: 2
 aliases:
   - &restore-cache
       keys:
-        - dependency-cache-{{ checksum "package.json" }}-3
+        - yarn-packages-{{ checksum "yarn.lock" }}
 
   - &save-cache
-      key: dependency-cache-{{ checksum "package.json" }}-3
+      key: yarn-packages-{{ checksum "yarn.lock" }}
       paths:
-        - node_modules
+        - ~/.cache/yarn
 
   # - &restore-cache-components
   #     keys:
@@ -74,7 +74,7 @@ aliases:
 
 defaults: &defaults
   docker:
-    - image: circleci/node:10-browsers
+    - image: circleci/node:12-browsers
   working_directory: ~/repo
 
 jobs:
@@ -83,7 +83,7 @@ jobs:
     steps:
       - checkout
       - restore_cache: *restore-cache
-      - run: npm install
+      - run: yarn install
       - save_cache: *save-cache
       - persist_to_workspace:
           root: ~/repo
@@ -98,11 +98,11 @@ jobs:
   #     - restore_cache: *restore-cache-components
   #     - restore_cache: *restore-cache-components-stencil
   #     - run:
-  #         command: npm install
+  #         command: yarn install
   #         working_directory: ~/repo/packages/components
   #     - save_cache: *save-cache-components
   #     - run:
-  #         command: npm run build -- --ci
+  #         command: yarn build -- --ci
   #         working_directory: ~/repo/packages/components
   #     - save_cache: *save-cache-components-stencil
   #     - persist_to_workspace:
@@ -117,11 +117,11 @@ jobs:
   #         at: ~/repo
   #     - restore_cache: *restore-cache-styles
   #     - run:
-  #         command: npm install
+  #         command: yarn install
   #         working_directory: ~/repo/packages/styles
   #     - save_cache: *save-cache-styles
   #     - run:
-  #         command: npm run build -- --ci
+  #         command: yarn build -- --ci
   #         working_directory: ~/repo/packages/styles
   #     - save_cache: *save-cache-styles
   #     - persist_to_workspace:
@@ -136,11 +136,11 @@ jobs:
   #         at: ~/repo
   #     - restore_cache: *restore-cache-design-tokens
   #     - run:
-  #         command: npm install
+  #         command: yarn install
   #         working_directory: ~/repo/packages/design-tokens
   #     - save_cache: *save-cache-design-tokens
   #     - run:
-  #         command: npm run build
+  #         command: yarn build
   #         working_directory: ~/repo/packages/design-tokens
   #     - save_cache: *save-cache-design-tokens
   #     - persist_to_workspace:
@@ -156,11 +156,11 @@ jobs:
   #     - restore_cache: *restore-cache-icons
   #     - restore_cache: *restore-cache-icons-stencil
   #     - run:
-  #         command: npm install
+  #         command: yarn install
   #         working_directory: ~/repo/packages/icons
   #     - save_cache: *save-cache-icons
   #     - run:
-  #         command: npm run build -- --ci
+  #         command: yarn build -- --ci
   #         working_directory: ~/repo/packages/icons
   #     - save_cache: *save-cache-icons-stencil
   #     - persist_to_workspace:
@@ -214,7 +214,7 @@ jobs:
   #     - attach_workspace:
   #         at: ~/repo
   #     - run:
-  #         command: npm run lint.sass
+  #         command: yarn lint.sass
   #         working_directory: ~/repo/packages/styles
 
   # test-components-lint:
@@ -223,7 +223,7 @@ jobs:
   #     - attach_workspace:
   #         at: ~/repo
   #     - run:
-  #         command: npm run lint
+  #         command: yarn lint
   #         working_directory: ~/repo/packages/components
 
   # test-components-spec:
@@ -232,7 +232,7 @@ jobs:
   #     - attach_workspace:
   #         at: ~/repo
   #     - run:
-  #         command: npm run test --ci
+  #         command: yarn test --ci
   #         working_directory: ~/repo/packages/components
 
   publish:
@@ -244,19 +244,19 @@ jobs:
       # - restore_cache: *restore-cache-components
       # - restore_cache: *restore-cache-icons
       # - restore_cache: *restore-cache-design-tokens
-      - run: npm install
+      - run: yarn install
       - run:
           name: Authenticate with registry
           command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
       - run:
           name: Setup all packages
-          command: npm run setup
+          command: yarn setup
       - run:
           name: Ignore files
           command: git update-index --assume-unchanged ~/repo/config/browserlint-config/yarn.lock ~/repo/config/stylelint-config/yarn.lock ~/repo/config/eslintlint-config/yarn.lock ~/repo/config/prettier-config/yarn.lock ~/repo/packages/animation/yarn.lock ~/repo/.npmrc ~/repo/packages/colour/yarn.lock ~/repo/.npmrc ~/repo/packages/components/yarn.lock ~/repo/.npmrc ~/repo/packages/elements/yarn.lock ~/repo/.npmrc ~/repo/packages/grid/yarn.lock ~/repo/.npmrc ~/repo/packages/icons/yarn.lock ~/repo/.npmrc ~/repo/packages/icons-react/yarn.lock ~/repo/.npmrc ~/repo/packages/icons-web-components/yarn.lock ~/repo/.npmrc ~/repo/packages/layout/yarn.lock ~/repo/.npmrc ~/repo/packages/react/yarn.lock ~/repo/.npmrc ~/repo/packages/themes/yarn.lock ~/repo/packages/tokens/yarn.lock ~/repo/packages/typeography/yarn.lock ~/repo/.npmrc ~/repo/packages/web-components/yarn.lock
       - run:
           name: Build packages
-          command: npm run build.ci
+          command: yarn build.ci
       - run:
           name: Publish
           command: npx lerna exec --concurrency 1 "npx --no-install semantic-release -e semantic-release-monorepo" && node -e "require('semantic-release-monorepo-hooks').hookAfterAll()"

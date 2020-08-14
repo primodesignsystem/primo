@@ -1,7 +1,298 @@
-version: 2.1
-orbs:
-  node: circleci/node@3.0.0
+version: 2
+
+aliases:
+  - &restore-cache
+      keys:
+        - dependency-cache-{{ checksum "package.json" }}-3
+
+  - &save-cache
+      key: dependency-cache-{{ checksum "package.json" }}-3
+      paths:
+        - node_modules
+
+  # - &restore-cache-components
+  #     keys:
+  #       - dependency-cache-{{ checksum "packages/components/package.json" }}-3
+
+  # - &save-cache-components
+  #     key: dependency-cache-{{ checksum "packages/components/package.json" }}-3
+  #     paths:
+  #       - packages/components/node_modules
+  #       - packages/components/dist
+  #       - packages/components/loader
+
+  # - &restore-cache-components-stencil
+  #     keys:
+  #       - stencil-cache-2
+
+  # - &save-cache-components-stencil
+  #     key: stencil-cache-2
+  #     paths:
+  #       - packages/components/.stencil
+  #       - packages/components/screenshot/images
+
+  # - &restore-cache-icons
+  #     keys:
+  #       - dependency-cache-{{ checksum "packages/icons/package.json" }}-3
+
+  # - &save-cache-icons
+  #     key: dependency-cache-{{ checksum "packages/icons/package.json" }}-3
+  #     paths:
+  #       - packages/icons/node_modules
+  #       - packages/icons/dist
+  #       - packages/icons/loader
+
+  # - &restore-cache-icons-stencil
+  #     keys:
+  #       - stencil-cache-2
+
+  # - &save-cache-icons-stencil
+  #     key: stencil-cache-2
+  #     paths:
+  #       - packages/icons/.stencil
+  #       - packages/icons/screenshot/images
+
+  # - &restore-cache-styles
+  #     keys:
+  #       - dependency-cache-{{ checksum "packages/styles/package.json" }}-3
+
+  # - &save-cache-styles
+  #     key: dependency-cache-{{ checksum "packages/styles/package.json" }}-3
+  #     paths:
+  #       - packages/styles/node_modules
+  #       - packages/styles/dist
+
+  # - &restore-cache-tokens
+  #     keys:
+  #       - dependency-cache-{{ checksum "packages/tokens/package.json" }}-3
+
+  # - &save-cache-tokens
+  #     key: dependency-cache-{{ checksum "packages/tokens/package.json" }}-3
+  #     paths:
+  #       - packages/tokens/node_modules
+  #       - packages/tokens/dist
+
+defaults: &defaults
+  docker:
+    - image: circleci/node:10-browsers
+  working_directory: ~/repo
+
+jobs:
+  build:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache: *restore-cache
+      - run: npm install
+      - save_cache: *save-cache
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - "*"
+
+  # build-components:
+  #   <<: *defaults
+  #   steps:
+  #     - attach_workspace:
+  #         at: ~/repo
+  #     - restore_cache: *restore-cache-components
+  #     - restore_cache: *restore-cache-components-stencil
+  #     - run:
+  #         command: npm install
+  #         working_directory: ~/repo/packages/components
+  #     - save_cache: *save-cache-components
+  #     - run:
+  #         command: npm run build -- --ci
+  #         working_directory: ~/repo/packages/components
+  #     - save_cache: *save-cache-components-stencil
+  #     - persist_to_workspace:
+  #         root: ~/repo
+  #         paths:
+  #           - "*"
+
+  # build-styles:
+  #   <<: *defaults
+  #   steps:
+  #     - attach_workspace:
+  #         at: ~/repo
+  #     - restore_cache: *restore-cache-styles
+  #     - run:
+  #         command: npm install
+  #         working_directory: ~/repo/packages/styles
+  #     - save_cache: *save-cache-styles
+  #     - run:
+  #         command: npm run build -- --ci
+  #         working_directory: ~/repo/packages/styles
+  #     - save_cache: *save-cache-styles
+  #     - persist_to_workspace:
+  #         root: ~/repo
+  #         paths:
+  #           - "*"
+
+  # build-design-tokens:
+  #   <<: *defaults
+  #   steps:
+  #     - attach_workspace:
+  #         at: ~/repo
+  #     - restore_cache: *restore-cache-design-tokens
+  #     - run:
+  #         command: npm install
+  #         working_directory: ~/repo/packages/design-tokens
+  #     - save_cache: *save-cache-design-tokens
+  #     - run:
+  #         command: npm run build
+  #         working_directory: ~/repo/packages/design-tokens
+  #     - save_cache: *save-cache-design-tokens
+  #     - persist_to_workspace:
+  #         root: ~/repo
+  #         paths:
+  #           - "*"
+
+  # build-icons:
+  #   <<: *defaults
+  #   steps:
+  #     - attach_workspace:
+  #         at: ~/repo
+  #     - restore_cache: *restore-cache-icons
+  #     - restore_cache: *restore-cache-icons-stencil
+  #     - run:
+  #         command: npm install
+  #         working_directory: ~/repo/packages/icons
+  #     - save_cache: *save-cache-icons
+  #     - run:
+  #         command: npm run build -- --ci
+  #         working_directory: ~/repo/packages/icons
+  #     - save_cache: *save-cache-icons-stencil
+  #     - persist_to_workspace:
+  #         root: ~/repo
+  #         paths:
+  #           - "*"
+  
+  # test-styles-clean-build:
+  #   <<: *defaults
+  #   steps:
+  #     - attach_workspace:
+  #         at: ~/repo
+  #     - run:
+  #         name: Checking clean build
+  #         command: git diff --exit-code
+  #         working_directory: ~/repo/packages/styles
+
+  # test-components-clean-build:
+  #   <<: *defaults
+  #   steps:
+  #     - attach_workspace:
+  #         at: ~/repo
+  #     - run:
+  #         name: Checking clean build
+  #         command: git diff --exit-code
+  #         working_directory: ~/repo/packages/components
+
+  # test-design-tokens-clean-build:
+  #   <<: *defaults
+  #   steps:
+  #     - attach_workspace:
+  #         at: ~/repo
+  #     - run:
+  #         name: Checking clean build
+  #         command: git diff --exit-code
+  #         working_directory: ~/repo/packages/design-tokens
+
+  # test-icons-clean-build:
+  #   <<: *defaults
+  #   steps:
+  #     - attach_workspace:
+  #         at: ~/repo
+  #     - run:
+  #         name: Checking clean build
+  #         command: git diff --exit-code
+  #         working_directory: ~/repo/packages/icons
+
+  # test-styles-lint:
+  #   <<: *defaults
+  #   steps:
+  #     - attach_workspace:
+  #         at: ~/repo
+  #     - run:
+  #         command: npm run lint.sass
+  #         working_directory: ~/repo/packages/styles
+
+  # test-components-lint:
+  #   <<: *defaults
+  #   steps:
+  #     - attach_workspace:
+  #         at: ~/repo
+  #     - run:
+  #         command: npm run lint
+  #         working_directory: ~/repo/packages/components
+
+  # test-components-spec:
+  #   <<: *defaults
+  #   steps:
+  #     - attach_workspace:
+  #         at: ~/repo
+  #     - run:
+  #         command: npm run test --ci
+  #         working_directory: ~/repo/packages/components
+
+  # publish:
+  #   <<: *defaults
+  #   steps:
+  #     - checkout
+  #     - restore_cache: *restore-cache
+  #     # - restore_cache: *restore-cache-styles
+  #     # - restore_cache: *restore-cache-components
+  #     # - restore_cache: *restore-cache-icons
+  #     # - restore_cache: *restore-cache-design-tokens
+  #     - run: npm install
+  #     - run:
+  #         name: Authenticate with registry
+  #         command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
+  #     - run:
+  #         name: Setup all packages
+  #         command: npm run setup
+  #     - run:
+  #         name: Ignore files
+  #         command: git update-index --assume-unchanged ~/repo/.npmrc ~/repo/packages/components/package-lock.json ~/repo/packages/design-tokens/package-lock.json ~/repo/packages/docs/package-lock.json ~/repo/packages/fonts/package-lock.json ~/repo/packages/icons/package-lock.json ~/repo/packages/styles/package-lock.json
+  #     - run:
+  #         name: Build packages
+  #         command: npm run build.ci
+  #     - run:
+  #         name: Publish
+  #         command: npx lerna exec --concurrency 1 "npx --no-install semantic-release -e semantic-release-monorepo" && node -e "require('semantic-release-monorepo-hooks').hookAfterAll()"
+
 workflows:
-  node-tests:
+  version: 2
+  build:
     jobs:
-      - node/test
+      - build
+      # - build-components:
+      #     requires: [build]
+      # - build-styles:
+      #     requires: [build]
+      # - build-icons:
+      #     requires: [build]
+      # - build-design-tokens:
+      #     requires: [build]
+      # - test-components-clean-build:
+      #     requires: [build-components]
+      # - test-styles-clean-build:
+      #     requires: [build-styles]
+      # - test-icons-clean-build:
+      #     requires: [build-icons]
+      # - test-design-tokens-clean-build:
+      #     requires: [build-design-tokens]
+      # - test-components-lint:
+      #     requires: [test-components-clean-build]
+      # - test-styles-lint:
+      #     requires: [test-styles-clean-build]
+      # - test-components-spec:
+      #     requires: [test-components-clean-build]
+      # - publish:
+      #     requires:
+      #       - test-components-lint
+      #       - test-styles-lint
+      #       - test-components-spec
+      #     filters:
+      #       branches:
+      #         only: master

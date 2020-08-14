@@ -29,11 +29,7 @@
     "type": "git",
     "url": "git+https://github.com/primodesignsystem/primo.git"
   },
-  "scripts": {
-    "build": "echo \"Build: run tests from root\" && exit 1",
-    "clean": "echo \"Clean: run tests from root\" && exit 1",
-    "test": "echo \"Error: run tests from root\" && exit 1"
-  },
+  
   "bugs": {
     "url": "https://github.com/primodesignsystem/primo/issues"
   },

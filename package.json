@@ -9,11 +9,17 @@
   "private": true,
   "scripts": {
     "format.js": "prettier --write \"**/*.{js,ts,tsx}\"",
-    "lint.js": "eslint . --ext ts --ext tsx --ext js"
+    "lint.js": "eslint . --ext ts --ext tsx --ext js",
+    "setup": "lerna exec yarn install",
+    "build": "lerna run build --parallel",
+    "build.ci": "lerna run build.ci --parallel",
+    "bootsrap": "lerna boostrap",
+    "clean": "lerna clean"
   },
   "devDependencies": {
     "@babel/core": "^7.10.5",
     "@commitlint/cli": "^9.1.1",
+    "@primo/eslint-config": "0.0.0",
     "@primo/prettier-config": "0.0.0",
     "@commitlint/config-conventional": "^9.1.1",
     "@semantic-release/changelog": "^5.0.1",
@@ -47,6 +53,9 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "release": {
+    "branches": ["main", "next"]
   },
   "workspaces": {
     "packages": [

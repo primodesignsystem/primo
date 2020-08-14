@@ -235,31 +235,31 @@ jobs:
   #         command: npm run test --ci
   #         working_directory: ~/repo/packages/components
 
-  # publish:
-  #   <<: *defaults
-  #   steps:
-  #     - checkout
-  #     - restore_cache: *restore-cache
-  #     # - restore_cache: *restore-cache-styles
-  #     # - restore_cache: *restore-cache-components
-  #     # - restore_cache: *restore-cache-icons
-  #     # - restore_cache: *restore-cache-design-tokens
-  #     - run: npm install
-  #     - run:
-  #         name: Authenticate with registry
-  #         command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
-  #     - run:
-  #         name: Setup all packages
-  #         command: npm run setup
-  #     - run:
-  #         name: Ignore files
-  #         command: git update-index --assume-unchanged ~/repo/.npmrc ~/repo/packages/components/package-lock.json ~/repo/packages/design-tokens/package-lock.json ~/repo/packages/docs/package-lock.json ~/repo/packages/fonts/package-lock.json ~/repo/packages/icons/package-lock.json ~/repo/packages/styles/package-lock.json
-  #     - run:
-  #         name: Build packages
-  #         command: npm run build.ci
-  #     - run:
-  #         name: Publish
-  #         command: npx lerna exec --concurrency 1 "npx --no-install semantic-release -e semantic-release-monorepo" && node -e "require('semantic-release-monorepo-hooks').hookAfterAll()"
+  publish:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache: *restore-cache
+      # - restore_cache: *restore-cache-styles
+      # - restore_cache: *restore-cache-components
+      # - restore_cache: *restore-cache-icons
+      # - restore_cache: *restore-cache-design-tokens
+      - run: npm install
+      - run:
+          name: Authenticate with registry
+          command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
+      - run:
+          name: Setup all packages
+          command: npm run setup
+      - run:
+          name: Ignore files
+          command: git update-index --assume-unchanged ~/repo/config/browserlint-config/yarn.lock ~/repo/config/stylelint-config/yarn.lock ~/repo/config/eslintlint-config/yarn.lock ~/repo/config/prettier-config/yarn.lock ~/repo/packages/animation/yarn.lock ~/repo/.npmrc ~/repo/packages/colour/yarn.lock ~/repo/.npmrc ~/repo/packages/components/yarn.lock ~/repo/.npmrc ~/repo/packages/elements/yarn.lock ~/repo/.npmrc ~/repo/packages/grid/yarn.lock ~/repo/.npmrc ~/repo/packages/icons/yarn.lock ~/repo/.npmrc ~/repo/packages/icons-react/yarn.lock ~/repo/.npmrc ~/repo/packages/icons-web-components/yarn.lock ~/repo/.npmrc ~/repo/packages/layout/yarn.lock ~/repo/.npmrc ~/repo/packages/react/yarn.lock ~/repo/.npmrc ~/repo/packages/themes/yarn.lock ~/repo/packages/tokens/yarn.lock ~/repo/packages/typeography/yarn.lock ~/repo/.npmrc ~/repo/packages/web-components/yarn.lock
+      - run:
+          name: Build packages
+          command: npm run build.ci
+      - run:
+          name: Publish
+          command: npx lerna exec --concurrency 1 "npx --no-install semantic-release -e semantic-release-monorepo" && node -e "require('semantic-release-monorepo-hooks').hookAfterAll()"
 
 workflows:
   version: 2
@@ -288,11 +288,11 @@ workflows:
       #     requires: [test-styles-clean-build]
       # - test-components-spec:
       #     requires: [test-components-clean-build]
-      # - publish:
-      #     requires:
-      #       - test-components-lint
-      #       - test-styles-lint
-      #       - test-components-spec
-      #     filters:
-      #       branches:
-      #         only: master
+      - publish:
+          # requires:
+          #   - test-components-lint
+          #   - test-styles-lint
+          #   - test-components-spec
+          filters:
+            branches:
+              only: main

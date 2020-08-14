@@ -259,8 +259,7 @@ jobs:
           command: yarn build.ci
       - run:
           name: Publish
-          command: yarn lerna exec --concurrency 1 "npx --no-install semantic-release -e semantic-release-monorepo" && node -e "require('semantic-release-monorepo-hooks').hookAfterAll()"
-
+          command: yarn publish
 workflows:
   version: 2
   build:

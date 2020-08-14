@@ -289,6 +289,7 @@ workflows:
       # - test-components-spec:
       #     requires: [test-components-clean-build]
       - publish:
+          requires: [build]
           # requires:
           #   - test-components-lint
           #   - test-styles-lint

@@ -253,7 +253,7 @@ jobs:
           command: yarn setup
       - run:
           name: Ignore files
-          command: git update-index --assume-unchanged ~/repo/config/browserlint-config/yarn.lock ~/repo/config/stylelint-config/yarn.lock ~/repo/config/eslintlint-config/yarn.lock ~/repo/config/prettier-config/yarn.lock ~/repo/packages/animation/yarn.lock ~/repo/.npmrc ~/repo/packages/colour/yarn.lock ~/repo/.npmrc ~/repo/packages/components/yarn.lock ~/repo/.npmrc ~/repo/packages/elements/yarn.lock ~/repo/.npmrc ~/repo/packages/grid/yarn.lock ~/repo/.npmrc ~/repo/packages/icons/yarn.lock ~/repo/.npmrc ~/repo/packages/icons-react/yarn.lock ~/repo/.npmrc ~/repo/packages/icons-web-components/yarn.lock ~/repo/.npmrc ~/repo/packages/layout/yarn.lock ~/repo/.npmrc ~/repo/packages/react/yarn.lock ~/repo/.npmrc ~/repo/packages/themes/yarn.lock ~/repo/packages/tokens/yarn.lock ~/repo/packages/typeography/yarn.lock ~/repo/.npmrc ~/repo/packages/web-components/yarn.lock
+          command: git update-index --assume-unchanged ~/repo/yarn.lock
       - run:
           name: Build packages
           command: yarn build.ci

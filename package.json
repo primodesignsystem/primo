@@ -81,6 +81,11 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
+  "commitlint": {
+    "extends": [
+      "@primo/commitlint-config"
+    ]
+  },
   "eslintConfig": {
     "extends": [
       "@primo/eslint-config"

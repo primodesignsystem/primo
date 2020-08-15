@@ -1,0 +1,28 @@
+{
+    "name": "@primo/commitlint-config",
+    "version": "0.0.0",
+    "description": "Commitlint config for Primo Design System",
+    "author": "Richard McCartney <richard@mccartney.io>",
+    "homepage": "https://github.com/primodesignsystem/primo#readme",
+    "license": "MIT",
+    "main": "index.js",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/primodesignsystem/primo.git"
+    },
+    "bugs": {
+      "url": "https://github.com/primodesignsystem/primo/issues"
+    },
+    "publishConfig": {
+      "access": "public"
+    },
+    "peerDependencies": {
+        "@commitlint/cli": "^8.3.5",
+        "@commitlint/config-conventional": "^8.3.4"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^8.3.5",
+        "@commitlint/config-conventional": "^8.3.4"
+    }
+  }
+  

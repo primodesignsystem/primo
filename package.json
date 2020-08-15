@@ -1,11 +1,11 @@
 {
   "name": "primo",
   "version": "0.0.0",
-  "description": "Primo Design System",
+  "description": "Primo Design System - mono-repo root package.json, used mainly to execute setup/build scripts. This package is not published.",
   "main": "index.js",
   "author": "Richard McCartney <richard@mccartney.io>",
   "license": "MIT",
-  "private": true,
+  "private": false,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/primodesignsystem/primo.git"

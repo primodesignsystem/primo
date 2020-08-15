@@ -18,7 +18,7 @@
     "build.ci": "lerna run build.ci --parallel",
     "bootsrap": "lerna boostrap",
     "clean": "lerna clean",
-    "release": "lerna exec --concurrency 1 semantic-release -- "
+    "release": "lerna exec --concurrency 1 \"npx --no-install semantic-release -e semantic-release-monorepo\" && node -e \"require('semantic-release-monorepo-hooks').hookAfterAll()\""
   },
   "devDependencies": {
     "@babel/core": "^7.10.5",

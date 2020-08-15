@@ -1,7 +1,7 @@
 {
   "name": "@primo/prettier-config",
   "version": "0.0.0",
-  "description": "> TODO: description",
+  "description": "Prettier config for Primo Design System",
   "author": "Richard McCartney <richard@mccartney.io>",
   "homepage": "https://github.com/primodesignsystem/primo#readme",
   "license": "MIT",

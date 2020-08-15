@@ -1,7 +1,4 @@
-const hooks = require('semantic-release-monorepo-hooks')
-const output = hooks()
-
-module.exports = {
+{
   branch: 'master',
   tagFormat: 'v${version}',
   prepare: [

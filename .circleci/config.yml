@@ -8,7 +8,7 @@ aliases:
 
   - &run
     name: Install Dependencies
-    command: yarn install --immutable
+    command: yarn cache clean && yarn install --immutable
 
   - &save-cache
       name: Save Yarn Package Cache
@@ -54,7 +54,8 @@ jobs:
           command: yarn build.ci
       - run:
           name: Publish
-          command: yarn lerna exec --concurrency 1 "npx --no-install semantic-release -e semantic-release-monorepo" && node -e "require('semantic-release-monorepo-hooks').hookAfterAll()"
+          command: yarn multi-semantic-release --execasync
+          # command: yarn lerna exec --concurrency 1 "npx --no-install semantic-release -e semantic-release-monorepo" && node -e "require('semantic-release-monorepo-hooks').hookAfterAll()"
 
 workflows:
   version: 2

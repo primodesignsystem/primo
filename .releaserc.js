@@ -1,24 +1,9 @@
-const hooks = require('semantic-release-monorepo-hooks');
-const output = hooks();
+const hooks = require('semantic-release-monorepo-hooks')
+const output = hooks()
 
 module.exports = {
-  extends: 'semantic-release-monorepo',
-  branch: 'main',
-
-  tagFormat: `v\${version\}-${output.package}`,
-
-  monorepo: {
-    analyzeCommits: [
-      '@semantic-release/commit-analyzer'
-    ],
-    generateNotes: [
-      '@semantic-release/release-notes-generator'
-    ]
-  },
-  verifyConditions: [
-    '@semantic-release/npm',
-    '@semantic-release/git'
-  ],
+  branch: 'master',
+  tagFormat: 'v${version}',
   prepare: [
     '@semantic-release/changelog',
     '@semantic-release/npm',
@@ -29,5 +14,17 @@ module.exports = {
   ],
   publish: [
     '@semantic-release/npm'
-  ]
+  ],
+  verifyConditions: [
+    '@semantic-release/npm',
+    '@semantic-release/git'
+  ],
+  monorepo: {
+    analyzeCommits: [
+      '@semantic-release/commit-analyzer'
+    ],
+    generateNotes: [
+      '@semantic-release/release-notes-generator'
+    ]
+  }
 };

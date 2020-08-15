@@ -1,4 +1,4 @@
-{
+module.exports = {
   branch: 'master',
   tagFormat: 'v${version}',
   prepare: [
@@ -24,4 +24,4 @@
       '@semantic-release/release-notes-generator'
     ]
   }
-};
+}

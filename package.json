@@ -18,7 +18,7 @@
     "build.ci": "lerna run build.ci --parallel",
     "bootsrap": "lerna boostrap",
     "clean": "lerna clean",
-    "release": "lerna exec --concurrency 1 \"npx --no-install semantic-release -e semantic-release-monorepo\" && node -e \"require('semantic-release-monorepo-hooks').hookAfterAll()\""
+    "release": "multi-semantic-release --execasync"
   },
   "devDependencies": {
     "@babel/core": "^7.10.5",
@@ -43,6 +43,7 @@
     "jest": "^26.1.0",
     "lerna": "^3.22.1",
     "lint-staged": "^10.2.11",
+    "multi-semantic-release": "^2.4.5",
     "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

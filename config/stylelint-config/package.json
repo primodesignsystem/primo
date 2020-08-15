@@ -1,18 +1,11 @@
 {
   "name": "@primo/stylelint-config",
   "version": "0.0.0",
-  "description": "> TODO: description",
+  "description": "Stylelint for Primo Design System",
   "author": "Richard McCartney <richard@mccartney.io>",
   "homepage": "https://github.com/primodesignsystem/primo#readme",
   "license": "MIT",
-  "main": "lib/stylelint-config.js",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
-  "files": [
-    "lib"
-  ],
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/primodesignsystem/primo.git"
@@ -22,5 +15,23 @@
   },
   "bugs": {
     "url": "https://github.com/primodesignsystem/primo/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "stylelint": "^13.6.0"
+  },
+  "dependencies": {
+    "stylelint-config-prettier": "^8.0.1",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-no-unsupported-browser-features": "^4.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-prettier": "^1.1.2",
+    "stylelint-scss": "^3.13.0"
+  },
+  "devDependencies": {
+    "stylelint": "^13.6.0"
   }
 }

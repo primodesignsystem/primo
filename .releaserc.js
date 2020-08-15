@@ -1,3 +1,5 @@
+'use strict'
+
 const hooks = require('semantic-release-monorepo-hooks')
 const output = hooks()
 
@@ -27,4 +29,4 @@ module.exports = {
       '@semantic-release/release-notes-generator'
     ]
   }
-};
+}

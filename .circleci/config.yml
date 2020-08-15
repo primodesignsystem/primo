@@ -259,7 +259,7 @@ jobs:
           command: yarn build.ci
       - run:
           name: Publish
-          command: yarn publish.ci
+          command: yarn release
 workflows:
   version: 2
   build:

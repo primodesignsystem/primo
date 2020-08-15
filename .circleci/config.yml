@@ -9,6 +9,7 @@ aliases:
       key: yarn-packages-{{ checksum "yarn.lock" }}
       paths:
         - ~/.cache/yarn
+        - node_modules
 
   # - &restore-cache-components
   #     keys:
@@ -259,7 +260,8 @@ jobs:
           command: yarn build.ci
       - run:
           name: Publish
-          command: yarn release
+          command: npx lerna exec --concurrency 1 "npx --no-install semantic-release -e semantic-release-monorepo" && node -e "require('semantic-release-monorepo-hooks').hookAfterAll()"
+
 workflows:
   version: 2
   build:

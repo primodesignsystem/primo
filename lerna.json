@@ -2,9 +2,9 @@
   "lerna": "3.20.2",
   "packages": [
     "packages/*",
-    "condif/*"
+    "config/*"
   ],
-  "npmClient": "npm",
+  "npmClient": "yarn",
   "version": "independent",
   "publishConfig": {
     "access": "public",

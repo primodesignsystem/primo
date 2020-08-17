@@ -1,6 +1,6 @@
 {
   "name": "@primo/stylelint-config",
-  "version": "0.0.0",
+  "version": "1.0.1",
   "description": "Stylelint for Primo Design System",
   "author": "Richard McCartney <richard@mccartney.io>",
   "homepage": "https://github.com/primodesignsystem/primo#readme",

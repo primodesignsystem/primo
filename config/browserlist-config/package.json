@@ -6,6 +6,10 @@
   "homepage": "https://github.com/primodesignsystem/primo#readme",
   "license": "MIT",
   "main": "index.js",
+  "private": false,
+  "files": [
+    "index.js"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/primodesignsystem/primo.git"

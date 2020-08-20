@@ -47,6 +47,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "semantic-release": "^17.1.1",
+    "semantic-release-cocoapods": "^1.0.0",
     "semantic-release-commit-filter": "^1.0.2",
     "semantic-release-monorepo": "^7.0.2",
     "semantic-release-monorepo-hooks": "^2.9.6",
@@ -63,6 +64,13 @@
     "branches": [
       "main",
       "next"
+    ],
+    "plugins": [
+      "semantic-release-cocoapods",
+      {
+        "podLint": false,
+        "podLintArgs": "--allow-warnings"
+      }
     ],
     "tagFormat": "v${version}",
     "prepare": [

@@ -1,5 +1,5 @@
 ---
-name: Enhancement request
+name: Enhancement request ✨
 about: Suggest an idea/change for this project
 title: ''
 labels: 'enhancement'

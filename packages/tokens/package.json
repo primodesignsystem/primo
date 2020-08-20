@@ -14,12 +14,8 @@
   "author": "Richard McCartney <richard@mccartney.io>",
   "homepage": "https://github.com/primodesignsystem/primo#readme",
   "license": "MIT",
-  "main": "lib/index.js",
-  "module": "es/index.js",
   "files": [
-    "es",
-    "lib",
-    "scss",
+    "build",
     "src"
   ],
   "publishConfig": {
@@ -29,7 +25,11 @@
     "type": "git",
     "url": "git+https://github.com/primodesignsystem/primo.git"
   },
-  
+  "scripts": {
+    "build": "node ./scripts/build.js",
+    "clean": "rm -rf build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "bugs": {
     "url": "https://github.com/primodesignsystem/primo/issues"
   },

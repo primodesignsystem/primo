@@ -14,6 +14,8 @@
   "author": "Richard McCartney <richard@mccartney.io>",
   "homepage": "https://github.com/primodesignsystem/primo#readme",
   "license": "MIT",
+  "main": "build/web/primo/js/index.js",
+  "module": "build/web/primo/js/index.js",
   "files": [
     "build",
     "src"

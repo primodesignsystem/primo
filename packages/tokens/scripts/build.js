@@ -18,7 +18,7 @@ function getStyleDictionaryConfig(brand, platform) {
           "content/icon",
           "color/css"
         ],
-        "buildPath": `build/web/${brand}/`,
+        "buildPath": `lib/web/${brand}/`,
         "files": [{
           "destination": "css/tokens.css",
           "format": "css/variables",
@@ -39,7 +39,7 @@ function getStyleDictionaryConfig(brand, platform) {
           "name/cti/pascal",
           "color/hex"
         ],
-        "buildPath": `build/web/${brand}/`,
+        "buildPath": `lib/web/${brand}/`,
         "files": [{
           "destination": "js/module/index.js",
           "format": "javascript/module",
@@ -64,7 +64,7 @@ function getStyleDictionaryConfig(brand, platform) {
       },
       "android": {
         "transformGroup": "android",
-        "buildPath": `build/android/${brand}/`,
+        "buildPath": `lib/android/${brand}/`,
         "files": [{
           "destination": "tokens.colors.xml",
           "format": "android/colors"
@@ -82,7 +82,7 @@ function getStyleDictionaryConfig(brand, platform) {
           "name/cti/camel",
           "color/UIColorSwift",
         ],
-        "buildPath": `build/ios/${brand}/`,
+        "buildPath": `lib/ios/${brand}/`,
         "files": [{
           "destination": "tokens.h",
           "format": "ios/macros"

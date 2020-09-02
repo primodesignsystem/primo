@@ -17,7 +17,7 @@
   "main": "build/web/primo/js/index.js",
   "module": "build/web/primo/js/index.js",
   "files": [
-    "build",
+    "lib",
     "src"
   ],
   "publishConfig": {

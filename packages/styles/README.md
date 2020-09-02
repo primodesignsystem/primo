@@ -1,11 +1,11 @@
-# `colour`
+# `styles`
 
 > TODO: description
 
 ## Usage
 
 ```
-const colour = require('colour');
+const styles = require('styles');
 
 // TODO: DEMONSTRATE API
 ```

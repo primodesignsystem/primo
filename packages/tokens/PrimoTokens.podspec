@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
     s.ios.deployment_target = '13.2'
     s.source_files = ['build/premier/tokens.swift', 'build/prima/tokens.swift', 'build/primo/tokens.swift']
     s.license = { :type => "MIT" }
-    s.author = { "BT" => "richard@mccartney.io" }
+    s.author = { "Primo" => "richard@mccartney.io" }
     s.source = { :git => "https://github.com/primodesignsystem/primo.git",
                  :tag => "#{s.version}" }
     s.frameworks = 'UIKit'

@@ -1,8 +1,16 @@
 {
   "font": {
     "family": {
-      "headers" : { "value": "Montserrat" },
-      "base"    : { "value": "{font.platform.system.value}" }
+      "sans": {
+        "value": "Open Sans"
+      },
+      "sans-condensed": {
+        "value": "Open Sans Condensed"
+      },
+      "mono": {
+        "value": "Space Mono"
+      },
+      "base": { "value": "{font.family.sans.value}" }
     }
   }
 }

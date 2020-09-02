@@ -1,0 +1,25 @@
+{
+  "border-radius": {
+    "none": {
+      "value": 0
+    },
+    "x-small": {
+      "value": 1
+    },
+    "small": {
+      "value": 2
+    },
+    "medium": {
+      "value": 4
+    },
+    "large": {
+      "value": 8
+    },
+    "x-large": {
+      "value": 16
+    },
+    "round": {
+      "value": "50%"
+    }
+  }
+}

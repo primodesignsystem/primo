@@ -23,12 +23,11 @@ async function release() {
       `${__dirname}/themes/package.json`,
       `${__dirname}/tokens/package.json`,
       `${__dirname}/typography/package.json`,
-      `${__dirname}/web-components/package.json`
+      `${__dirname}/web-components/package.json`,
     ];
 
     await multirelease(paths, { dryRun });
-  }
-  catch (error) {
+  } catch (error) {
     // Log out errors.
     console.error('[multi-semantic-release]:', error);
     process.exit(1);

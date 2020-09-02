@@ -1,13 +1,13 @@
 {
-    "button": {
-        "primary": {
-            "hover": {
-                "background": {
-                    "color": {
-                        "value": "#FF3636"
-                    }
-                }
-            }
+  "button": {
+    "primary": {
+      "hover": {
+        "background": {
+          "color": {
+            "value": "#FF3636"
+          }
         }
+      }
     }
   }
+}

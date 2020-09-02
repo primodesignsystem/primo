@@ -1,7 +1,7 @@
 {
-    "font": {
-      "platform": {
-        "system": { "value": "San Francisco" }
-      }
+  "font": {
+    "platform": {
+      "system": { "value": "San Francisco" }
     }
   }
+}

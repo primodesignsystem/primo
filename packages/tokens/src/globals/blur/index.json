@@ -1,0 +1,38 @@
+{
+  "blur": {
+    "filter": {
+      "100": {
+        "value": "4px"
+      },
+      "200": {
+        "value": "8px"
+      },
+      "300": {
+        "value": "16px"
+      },
+      "400": {
+        "value": "32px"
+      },
+      "500": {
+        "value": "64px"
+      },
+      "background": {
+        "100": {
+          "value": "{blur.filter.100.value}"
+        },
+        "200": {
+          "value": "{blur.filter.200.value}"
+        },
+        "300": {
+          "value": "{blur.filter.300.value}"
+        },
+        "400": {
+          "value": "{blur.filter.400.value}"
+        },
+        "500": {
+          "value": "{blur.filter.500.value}"
+        }
+      }
+    }
+  }
+}

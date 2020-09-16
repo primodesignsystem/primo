@@ -11,7 +11,7 @@
     "url": "git+https://github.com/primodesignsystem/primo.git"
   },
   "scripts": {
-    "format.js": "prettier --write \"**/*.{json,js,ts,tsx}\"",
+    "prettier.js": "prettier --write \"**/*.{json,js,ts,tsx}\"",
     "lint.js": "eslint . --ext ts --ext tsx --ext js",
     "setup": "lerna exec yarn install",
     "build": "lerna run build --parallel",

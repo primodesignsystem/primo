@@ -26,7 +26,9 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       
       - name: Build
-        run: yarn && yarn build
+        run: yarn
+        run: yarn setup
+        run: yarn build
       
       - name: Publish
         run: yarn multi-semantic-release --execasync

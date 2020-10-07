@@ -1,11 +1,11 @@
-import React, { FunctionComponent, ButtonHTMLAttributes, LinkHTMLAttributes, MouseEvent, ReactNode, forwardRef } from 'react'
+import React, { FunctionComponent, MouseEvent, ReactNode, forwardRef } from 'react'
 
-export interface ButtonElementProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonElementProps {
   /** Optional prop to specify the type of the Button */
   type?: 'button' | 'reset' | 'submit'
 }
 
-export interface LinkElementProps extends LinkHTMLAttributes<HTMLAnchorElement> {
+interface LinkElementProps {
   /** Optional prop to prompts a user to save the linked URL instead of navigating to it */
   download?: string
 

@@ -3,7 +3,7 @@
     "base": {
       "border": {
         "radius": {
-          "value": "4px"
+          "value": "{border-radius.default.value}"
         }
       },
       "text": {
@@ -30,12 +30,12 @@
       "disabled": {
         "font": {
           "color": {
-            "value": "{color.base.gray.medium}"
+            "value": "{color.gray.100}"
           }
         },
         "background": {
           "color": {
-            "value": "{color.base.gray.light}"
+            "value": "{color.gray.100}"
           }
         }
       }

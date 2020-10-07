@@ -1,10 +1,10 @@
 {
   "color": {
     "font": {
-      "base": { "value": "{color.base.black.value}" },
-      "primary": { "value": "{color.primary.value}" },
-      "secondary": { "value": "{color.secondary.value}" },
-      "tertiary": { "value": "{color.base.gray.light.value}" }
+      "base": { "value": "{color.shade.black.value}" },
+      "primary": { "value": "{color.brand.primary.value}" },
+      "secondary": { "value": "{color.brand.secondary.value}" },
+      "tertiary": { "value": "{color.gray.100.value}" }
     }
   }
 }

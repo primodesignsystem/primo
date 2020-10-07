@@ -13,6 +13,9 @@
   ],
   "scripts": {
     "build": "rollup -c",
+    "storybook": "start-storybook --ci -p 6006",
+    "storybook.build": "build-storybook --docs --quiet",
+    "storybook.quiet": "yarn storybook --quiet",
     "lint": "eslint ./{src,.storybook}",
     "test": "jest"
   },
@@ -31,8 +34,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.11.5",
-    "@btdigital/loop-fonts": "^0.5.2",
-    "@btdigital/loop-tokens": "^0.5.2",
     "@rollup/plugin-commonjs": "^15.0.0",
     "@rollup/plugin-node-resolve": "^9.0.0",
     "@rollup/plugin-typescript": "^5.0.2",
@@ -51,7 +52,6 @@
     "@typescript-eslint/parser": "^4.0.0",
     "@types/testing-library__jest-dom": "^5.9.2",
     "@types/testing-library__react": "^10.2.0",
-    "@whitespace/storybook-addon-html": "^2.0.1",
     "babel-eslint": "^10.0.0",
     "babel-loader": "^8.1.0",
     "eslint": "^7.5.0",

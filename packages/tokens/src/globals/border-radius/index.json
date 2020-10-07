@@ -18,8 +18,17 @@
     "16": {
       "value": "16px"
     },
+    "pill": {
+      "value": "20em"
+    },
     "round": {
       "value": "50%"
+    },
+    "sharp": {
+      "value": "{border-radius.0.value}"
+    },
+    "default": {
+      "value": "{border-radius.4.value}"
     }
   }
 }

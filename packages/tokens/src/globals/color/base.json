@@ -6,12 +6,9 @@
       },
       "white": "#FFFFFF"
     },
-    "grey": {
+    "gray": {
       "100": {
         "value": "#F6F6F6"
-      },
-      "200": {
-        "value": 
       }
     }
   }

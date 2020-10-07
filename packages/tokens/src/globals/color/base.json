@@ -10,6 +10,14 @@
       "100": {
         "value": "#F6F6F6"
       }
+    },
+    "action": {
+      "primary": {
+        "value": "#1E75DC"
+      },
+      "secondary": {
+        "value": "#666666"
+      }
     }
   }
 }

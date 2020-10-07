@@ -27,8 +27,8 @@ jobs:
       
       - name: Build
         run: yarn
-        run: yarn setup
-        run: yarn build
+      - run: yarn setup
+      - run: yarn build
       
       - name: Publish
         run: yarn multi-semantic-release --execasync

@@ -16,3 +16,5 @@
 > Primo is an open-source design system that makes it easy to build high quality 
 > and accessible web applications. The system includes designs, token, styles 
 > and components built using modern JavaScript.
+
+Currently under a lot of work in progress ⚠️

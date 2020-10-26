@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const StyleDictionaryPackage = require('style-dictionary');
 
 // HAVE THE STYLE DICTIONARY CONFIG DYNAMICALLY GENERATED

@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 const multirelease = require('multi-semantic-release');
 const { getManifest } = require('multi-semantic-release/lib/getManifest');
 

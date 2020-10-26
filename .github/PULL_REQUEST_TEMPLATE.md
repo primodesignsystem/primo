@@ -12,3 +12,7 @@ Fixes [list issues/bugs if needed]
 ## Screenshots
 
 [if relevant, include a screenshot]
+
+## Next steps
+
+[if relevant, include next steps of work]

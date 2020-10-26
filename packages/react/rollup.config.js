@@ -18,17 +18,14 @@ export default [
       dir: 'dist',
       format: 'cjs',
       exports: 'named',
-      sourcemap: true
+      sourcemap: true,
     },
 
     plugins: [
       ...basePlugins,
       postcss(postcssConfig),
-      // We do this here because we are able to use `dist` for cjs, and
-      // declaration exports require use of a dist. ES modules require a
-      // file so that we can specify standard .es.js file extension.
-      typescript({ declaration: true, declarationDir: 'dist/types' })
-    ]
+      typescript({ declaration: true, declarationDir: 'dist/types' }),
+    ],
   },
   // ES Module
   {
@@ -38,17 +35,17 @@ export default [
         file: 'dist/index.es.js',
         format: 'es',
         exports: 'named',
-        sourcemap: true
-      }
+        sourcemap: true,
+      },
     ],
     plugins: [
       ...basePlugins,
       postcss({
         ...postcssConfig,
-        extract: false, // We don't extract CSS for modules because we don't want index.es.css
-        inject: false // We don't want to inject any styles into the head of the page
+        extract: false,
+        inject: false,
       }),
-      typescript()
-    ]
-  }
+      typescript(),
+    ],
+  },
 ];

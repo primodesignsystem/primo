@@ -1,16 +1,17 @@
-import React from 'react';
+import { Meta, Story } from "@storybook/react";
+import React from "react";
 
-import Button from './Button';
+import Button, { ButtonProps } from "./Button";
 
 export default {
-  title: 'Components/Button',
+  args: { children: "Button" },
+  argTypes: { className: { control: { type: null } } },
   component: Button,
-};
+  parameters: {
+    edgeToEdge: false,
+    withSurface: false
+  },
+  title: "Components/Button"
+} as Meta;
 
-const Template = () => <Button>Click me!</Button>;
-
-export const Default = Template.bind({});
-Default.args = {
-    label: 'Button',
-};
-
+export const Default: Story<ButtonProps> = args => <Button {...args} />;

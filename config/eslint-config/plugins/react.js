@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = {
   extends: [
     'plugin:react/recommended',
@@ -42,7 +40,7 @@ module.exports = {
     // In these cases, we don't need to handle prop type validation like we
     // would for code we ship to users.
     {
-      files: ['*-story.js'],
+      files: ['*.stories.tsx'],
       rules: {
         'react/prop-types': 0,
       },

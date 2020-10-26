@@ -1,7 +1,7 @@
 {
-    "color": {
-        "manifest": {
-            "value": "{color.brand.primary.value}"
-        }
+  "color": {
+    "manifest": {
+      "value": "{color.brand.primary.value}"
     }
+  }
 }

@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { render, RenderResult } from '@testing-library/react';
 
-import Button from '../../components/Button'
+import { Button } from '../..';
 
 let documentBody: RenderResult;
 

@@ -11,12 +11,13 @@
     "url": "git+https://github.com/primodesignsystem/primo.git"
   },
   "scripts": {
-    "prettier.js": "prettier --write \"**/*.{json,js,ts,tsx}\"",
-    "lint.js": "eslint . --ext ts --ext tsx --ext js",
+    "prettier": "prettier --check \"**/*.{json,js,ts,tsx}\"",
+    "prettier.fix": "prettier --write \"**/*.{json,js,ts,tsx}\"",
+    "lint": "eslint .",
     "setup": "lerna exec yarn install",
     "build": "lerna run build --parallel",
     "build.ci": "lerna run build.ci --parallel",
-    "bootsrap": "lerna boostrap",
+    "bootstrap": "lerna bootstrap",
     "clean": "lerna clean"
   },
   "devDependencies": {
@@ -37,7 +38,14 @@
     "cz-conventional-changelog": "^3.2.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
-    "eslint": "^6.8.0",
+    "eslint": "^7.5.0",
+    "eslint-config-react-app": "^5.2.1",
+    "eslint-plugin-flowtype": "^5.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^24.0.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react-hooks": "^4.0.8",
     "find-git-root": "^1.0.4",
     "husky": "^4.2.5",
     "hygen": "^6.0.4",
@@ -115,14 +123,14 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "commitlint": {
-    "extends": [
-      "@primo/commitlint-config"
-    ]
-  },
   "eslintConfig": {
     "extends": [
       "@primo/eslint-config"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@primo/commitlint-config"
     ]
   }
 }

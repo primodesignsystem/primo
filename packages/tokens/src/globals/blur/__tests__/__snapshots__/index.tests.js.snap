@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`blur tokens : matches snapshot 1`] = `
+Object {
+  "blur": Object {
+    "filter": Object {
+      "100": Object {
+        "value": "4px",
+      },
+      "200": Object {
+        "value": "8px",
+      },
+      "300": Object {
+        "value": "16px",
+      },
+      "400": Object {
+        "value": "32px",
+      },
+      "500": Object {
+        "value": "64px",
+      },
+      "background": Object {
+        "100": Object {
+          "value": "{blur.filter.100.value}",
+        },
+        "200": Object {
+          "value": "{blur.filter.200.value}",
+        },
+        "300": Object {
+          "value": "{blur.filter.300.value}",
+        },
+        "400": Object {
+          "value": "{blur.filter.400.value}",
+        },
+        "500": Object {
+          "value": "{blur.filter.500.value}",
+        },
+      },
+    },
+  },
+}
+`;

@@ -31,8 +31,9 @@ jobs:
       - run: yarn build
       
       - name: Publish
-        run: yarn multi-semantic-release --execasync
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: yarn multi-semantic-release --execasync  
     
     timeout-minutes: 5

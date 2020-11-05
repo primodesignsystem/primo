@@ -78,6 +78,9 @@
       "main",
       "next"
     ],
+    "dryRun": false,
+    "ci": false,
+    "repositoryUrl": "https://github.com/primo-design-system/primo",
     "plugins": [
       "semantic-release-cocoapods",
       {

@@ -17,4 +17,4 @@
 > and accessible web applications. The system includes designs, token, styles 
 > and components built using modern JavaScript.
 
-Currently under a lot of work in progress ⚠️
+Currently under a lot of work in progress 🚀
